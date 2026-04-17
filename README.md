@@ -22,21 +22,63 @@ A powerful and user-friendly **Graphical User Interface (GUI)** designed to simp
 
 ## 🛠️ Installation & Usage
 
-### Prerequisites
-- **Python 3.10 or higher**
-- **CustomTkinter**: `pip install customtkinter`
-- **Pillow**: `pip install Pillow`
+This tool requires **Python 3** to be installed on your system.
 
-### How to Run
-1. Clone this repository or download the source code.
-2. Ensure you have the backend tools (`rpatool` and `unrpyc`) in the project directory.
-3. Run the application:
-   ```bash
-   python m.py
-   ```
-4. **Step 1**: Select the game executable (`.exe`) to scan the `game` folder.
-5. **Step 2**: Select your desired output location.
-6. **Step 3**: Select the files you want to process and click **Extract** or **Decompile**.
+### Recommended Installation (for Debian/Ubuntu Users)
+
+For a hassle-free experience with all dependencies built-in, it is highly recommended to use the `.deb` package. You can download it from:
+
+*   [VastoLordeX Itch.io](https://vastolordex.itch.io/rpa-extraction-rpyc-decompilation-engine)
+*   [GitHub Releases](https://github.com/)
+
+To install the `.deb` package:
+
+```bash
+sudo dpkg -i rpa-tool_1.0.0_all.deb
+```
+
+After installation, you can launch the GUI application by typing `rpa-tool` in your terminal.
+
+### Manual Installation (Advanced Users)
+
+To run the GUI manually, follow these steps:
+
+1.  **File Structure**:
+    Ensure you have the following files and folders in the same directory:
+    *   `RPA-RPYC-Decompiler-GUI.py`
+    *   `extractor.py`
+    *   `rpatool_new.py`
+    *   `unrpyc/` (the complete folder from GitHub)
+    *   `profile.gif`
+    *   `128x128.png`
+
+2.  **Set up a Virtual Environment**:
+    ```bash
+    python3 -m venv .venv
+    source .venv/bin/activate
+    ```
+
+3.  **Install Dependencies**:
+    ```bash
+    pip install customtkinter pillow packaging darkdetect
+    ```
+
+4.  **Run the Application**:
+    *   **GUI Version**:
+        ```bash
+        source .venv/bin/activate
+        python RPA-RPYC-Decompiler-GUI.py
+        ```
+    *   **CLI Version** (Not yet implemented):
+        ```bash
+        source .venv/bin/activate
+        python extractor.py
+        ```
+
+### Usage Steps (GUI)
+1.  **Select Game EXE**: Click the button to select the game executable (`.exe`). This will scan the associated `game` folder for `.rpa` and `.rpyc` files.
+2.  **Select Output Location**: Choose the directory where you want the extracted and decompiled files to be saved.
+3.  **Process Files**: Select the specific `.rpa` or `.rpyc` files you wish to process from the lists, then click the respective **Extract** or **Decompile** buttons.
 
 ---
 
@@ -51,16 +93,24 @@ A powerful and user-friendly **Graphical User Interface (GUI)** designed to simp
 
 ---
 
-## 📜 Credits & Acknowledgments
+## ⚠️ Disclaimer
 
-This GUI application is built upon the incredible work of the following developers and tools:
+This tool is intended for educational purposes, modding, and translation projects. Please respect the original creators of the games you are analyzing and ensure you have the right to access the assets before using this tool.
 
-| Tool | Author / Source | Purpose |
-| :--- | :--- | :--- |
-| **unrpyc** | [CensoredUsername](https://github.com/CensoredUsername/unrpyc) | The core engine for decompiling `.rpyc` files. |
-| **rpatool** | [shizmob](https://github.com/shizmob/rpatool) | The reliable tool for handling Ren'Py Archive (`.rpa`) files. |
-| **Redecisce** | Community Fix | Specialized logic used to fix common extraction errors in `.rpa` files. |
-| **CustomTkinter** | [TomSchimansky](https://github.com/TomSchimansky/CustomTkinter) | Providing the modern and sleek dark-themed UI components. |
+**This tool is NOT for sale.** If you modify this GUI, please provide proper credits and acknowledge the original contributors.
+
+---
+
+## 👥 Credits and Contributors
+
+This project is made possible by the contributions of:
+
+*   **VastoLordeX**: Original GUI development and integration.
+*   **CensoredUsername**: For the foundational `unrpyc` tool.
+*   **shizmob**: For the robust `rpatool`.
+*   **Community**: For various fixes and improvements, including the "Redecisce" fixes for RPA extraction errors.
+
+If you encounter any bugs or have suggestions, please open an issue on the [GitHub repository](https://github.com/).
 
 ---
 
@@ -68,8 +118,3 @@ This GUI application is built upon the incredible work of the following develope
 - **Patreon**: [Support VastoLordeX](https://www.patreon.com/c/VastoLordeX)
 - **Itch.io**: [Download on Itch.io](https://vastolordex.itch.io/rpa-extraction-rpyc-decompilation-engine)
 - **GitHub**: [Project Repository](https://github.com/)
-
----
-
-## ⚠️ Disclaimer
-This tool is intended for educational purposes, modding, and translation projects. Please respect the original creators of the games you are analyzing. Ensure you have the right to access the assets before using this tool.
